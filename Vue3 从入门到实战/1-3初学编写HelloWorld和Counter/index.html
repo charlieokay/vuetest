@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root">{{message}}</div>
+
+</body>
+<script>
+    //生命周期函数，在某一时刻会自动执行函数
+    const app = Vue.createApp({
+        data() {
+            return {
+                message: 'hello world'
+            }
+        },
+        // mounted() {
+        //     alert('mouted')
+        // },
+        methods: {
+            handleClick(e) {
+                e.preventDefault();
+            }
+        },
+        template: `
+            <form action="http://www.baidu.com" @click="handleClick">
+            <button type="submit">点击一下</button>
+            </form>
+        `
+    }).mount('#root')
+</script>
+
+</html>
