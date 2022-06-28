@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8</title>
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+    <!-- 数据，方法，计算属性，侦听器 -->
+    <div id="root"></div>
+
+</body>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                message: 'hello world'
+            }
+        },
+        // mounted() {
+        //     alert('mouted')
+        // },
+        methods: {
+            handleClick(e) {
+                e.preventDefault();
+            }
+        },
+        template: `
+            <form action="http://www.baidu.com" @click="handleClick">
+            <button type="submit">点击一下</button>
+            </form>
+        `
+    }).mount('#root')
+</script>
+
+</html>
