@@ -220,6 +220,76 @@ set(){
     </div>
  </template>
 
+# 事件绑定  
+## 事件修饰符
+ .stop 事件修饰符  ----点击子事件，不会触发父级事件响应
+ <div @click="toShow()"> //父级事件
+    <h3>数字改变：{{counter}}</h3>
+        <button @click.stop="toAddOne()">+1</button> //子事件!!!!!
+ </div>
+
+ .self 事件修饰符  ----只有点击事件本身DOM标签，才会触发执行
+ <div @click.self="toShow()"> //父级事件!!!!!
+    <h3>数字改变：{{counter}}</h3>
+        <button @click="toAddOne()">+1</button> //子事件
+ </div>
+
+ .capture 捕获修饰符 ----事件触发从外向内（使用较少）
+
+ .once 一次修饰符 事件执行一次
+
+.stop
+.prevent
+.capture
+.self
+.once
+.passive
+
+<!-- 阻止单击事件继续冒泡 -->
+<a @click.stop="doThis"></a>
+
+<!-- 提交事件不再重载页面 -->
+<form @submit.prevent="onSubmit"></form>
+
+<!-- 修饰符可以串联 -->
+<a @click.stop.prevent="doThat"></a>
+
+<!-- 只有修饰符 -->
+<form @submit.prevent></form>
+
+<!-- 添加事件监听器时使用事件捕获模式 -->
+<!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 -->
+<div @click.capture="doThis">...</div>
+
+<!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+<!-- 即事件不是从内部元素触发的 -->
+<div @click.self="doThat">...</div>
+
+
+## 案件修饰符
+.enter
+.tab
+.delete (捕获“删除”和“退格”键)
+.esc
+.space
+.up
+.down
+.left
+.right
+
+## 鼠标按钮修饰符
+.left
+.right
+.middle
+
+# 双向绑定
+ 
+ 
+ 
+
+
+
+
 
 
 

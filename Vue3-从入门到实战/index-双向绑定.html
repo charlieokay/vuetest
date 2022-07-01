@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双向绑定</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root">
+        zhegsb
+        <p>{{message}}</p>
+
+        <input type="text" v-model="message">
+        <br>
+        jack <input type="checkbox" name="" id="" v-model="message" value="jack">
+        <br>
+        pini <input type="checkbox" name="" id="" v-model="message" value="pini">
+        <br>
+        keke <input type="checkbox" name="" id="" v-model="message" value="keke">
+        <br>
+        <select name="" id="" v-model="message">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <br>
+        <input type="text">
+    </div>
+</body>
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                message: []
+            }
+        },
+        methods: {
+
+        },
+    }).mount('#root')
+</script>
+
+</html>

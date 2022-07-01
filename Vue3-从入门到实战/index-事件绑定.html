@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue技术学习 事件绑定 </title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div @click="toShow()">
+            <h3>数字改变：{{counter}}</h3>
+            <button @click="toAddOne()">+1</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const app = Vue.createApp({
+        // el: '#root',
+        data() {
+            return {
+                message: 'todolist',
+                counter: 0,
+            }
+        },
+        methods: {
+            hangdleButClick() {
+
+            },
+            toShow() {
+                alert('显示')
+            },
+            toAddOne(e) {
+                console.log('输出', e)
+                this.counter++
+            }
+        },
+
+    }).mount('#root')
+
+</script>
+
+</html>
