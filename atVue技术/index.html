@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue技术学习</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div>
+            <h1>
+                使用方法：{{isHot ? "炎热" : "凉爽"}}
+            </h1>
+            <button type="button" @click="toChange()">切换状态</button>
+        </div>
+
+        <div>
+            <h2>
+                使用计算属性：{{info}}
+            </h2>
+            <button type="button" @click="toChange()">切换状态</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    const app = Vue.createApp({
+
+        data() {
+            return {
+                isHot: true,
+
+            }
+        },
+        methods: {
+            toChange() {
+                return this.isHot = !this.isHot;
+            }
+        },
+        computed: {
+            info() {
+                return this.isHot ? '炎热' : '凉爽'
+            }
+        },
+        watch: {
+            isHot: {
+
+            }
+        }
+
+    }).mount('#root')
+</script>
+
+</html>
