@@ -209,6 +209,21 @@ set(){
 # 监视属性
     
 
+# 列表渲染
+ v-for的优先级高于v-if
+ v-for 循环展示
+ v-if 判断显示
+ template - 占位符
+ <template v-for="(item, key, index) in listObject" :key="index">
+    <div v-if="key !== 'lastName' ">
+        {{item}} -- {{key}} -- {{index}}
+    </div>
+ </template>
+
+
+
+
+
 
 
 

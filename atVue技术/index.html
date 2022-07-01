@@ -11,10 +11,10 @@
 
 <body>
     <div id="root">
-        <h1>变更函数</h1>
+        <h1>1.数组增删</h1>
         <h2>push--数组尾部添加 pop--数组尾部删除 shift--数组首部删除 unshift--数组首部添加</h2>
         <span>数组：</span>
-        <li v-for="item, index in listArray">
+        <li v-for="item, index in listArrayOne">
             {{item}} -- {{index}}
         </li>
         <br>
@@ -23,9 +23,25 @@
         <button @click="handleDeleteFirstButClick()">首部删除</button>
         <br>
         <span> 对象：</span>
-        <li v-for="(item, key, index) in listObject">
-            {{item}} -- {{key}} -- {{index}}
+        <template v-for="(item, key, index) in listObject" :key="index">
+            <div v-if="key !== 'lastName' ">
+                {{item}} -- {{key}} -- {{index}}
+            </div>
+        </template>
+
+        <h1>2.替换整个数组</h1>
+        <span>数组：</span>
+        <li v-for="item, index in listArrayTwo">
+            {{item}} -- {{index}}
         </li>
+        <button @click="handleChangeArray()">改变数组</button>
+
+        <h1>3.更新部门数组</h1>
+        <span>数组：</span>
+        <li v-for="item, index in listArrayThree">
+            {{item}} -- {{index}}
+        </li>
+        <button @click="handleUpdateArray()">改变数组</button>
 
     </div>
 
@@ -35,7 +51,9 @@
 
         data() {
             return {
-                listArray: ['dell', 'lee', 'teacher'],
+                listArrayOne: ['dell1', 'lee1', 'teacher1'],
+                listArrayTwo: ['dell2', 'lee2', 'teacher2'],
+                listArrayThree: ['dell3', 'lee3', 'teacher3'],
                 listObject: {
                     firstName: 'dell',
                     lastName: 'lee',
@@ -46,15 +64,23 @@
         methods: {
             handleAddButClick() {
                 // 在数组最后面添加
-                this.listArray.push('hello')
+                this.listArrayOne.push('hello')
             },
             handleDeleteLastButClick() {
                 // 从后面删除
-                this.listArray.pop()
+                this.listArrayOne.pop()
             },
             handleDeleteFirstButClick() {
                 // 从后面删除
-                this.listArray.shift()
+                this.listArrayOne.shift()
+            },
+            handleChangeArray() {
+                // 替换数组内容
+                this.listArrayTwo = ['tutu', 'QQ']
+            },
+            handleUpdateArray() {
+                // 更新数组内容
+                this.listArrayThree[0] = 'todo3'
             }
         },
 
