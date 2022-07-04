@@ -292,6 +292,21 @@ input、textarea、checkbox、radio、select
  ## 全局组件，只要定义了，处处可以使用，性能不高，但是使用起来方便,直接使用，命名方式：建议  小写字母单词，中间使用横线间隔。
  ## 局部组件，自行定义，要注册才能使用，性能比较高，使用起来麻烦，命名方式： 建议大写字母开头， 驼峰式命名规则， 需要做一个名字和组件间的映射。
  
+# 动态组件
+ ## keep-alive标签，进行缓存机制。其内部标签填写的数据暂时不会被清除
+
+# 异步组件
+app.component( 'async-common-item',Vue.defineAsyncComponent( () => {
+    return new Promise( (resolve, reject) => {
+        setTimeout( ( ) => {
+            resolve({
+                template: '<div>this is an async component</ div>'
+            })
+        },4000)
+    })
+}))
+
+
 
 
 
