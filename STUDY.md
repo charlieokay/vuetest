@@ -307,6 +307,12 @@ app.component( 'async-common-item',Vue.defineAsyncComponent( () => {
 }))
 
 
+# Mixin 混入  ----平时不使用
+ 组件中的data数据优先级高于mixin中的data
+
+ 生命周期函数，先执行mixin中的，再执行组件中的。
+
+# 自定义指令 directive 
 
 
 
